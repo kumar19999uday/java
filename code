@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static int reverseNum(int num){
+        Stack<Integer> stk = new Stack<>();
+        int ans =0,p10=1;
+        
+        while(num!=0){
+            int digit = num%10;
+            num/=10;
+            stk.push(digit);
+        }
+        while(!stk.isEmpty()){
+            ans+=stk.peek()*p10;
+            p10*=10;
+            stk.pop();
+        }
+        return ans;
+    }
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t--!=0){
+            System.out.println(reverseNum(sc.nextInt()));
+        }
+    }
+}
