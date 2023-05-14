@@ -1,0 +1,7 @@
+class car{
+    String brand;
+    String colour;
+    String name;
+    int sheeter;
+
+}
